@@ -1,0 +1,78 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#root{
+    margin: 10px;
+}
+.to-do-form {
+    display: inline-block;
+    padding: 10px;
+    background-color: darkgoldenrod;
+    color: whitesmoke;
+    box-shadow: 5px 5px 5px darkblue;
+}
+.field {
+    margin: 10px;
+}
+
+.field label{
+    display: inline-block;
+}
+
+.number {
+    border: none;
+    width: 50px;
+    appearance: none;
+}
+
+.addBtn {
+    border: none;
+    background-color: whitesmoke;
+    outline: 2px solid darkblue;
+    padding: 5px;
+    margin-left: 10px;
+}
+.users {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user {
+    position: relative;
+    padding: 10px;
+    background-color: darkgoldenrod;
+    box-shadow: 10px 10px 10px darkblue;
+    color: whitesmoke;
+    margin: 10px;
+}
+.user:first-child {
+    margin-left: 0;
+}
+
+.close {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border: 1px solid darkblue;
+    border-radius: 50%;
+    background-color: darkgoldenrod;
+    z-index: 5;
+    right: 0;
+    top: 0;
+    color: darkblue;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transform: translate(50%, -50%);
+}
