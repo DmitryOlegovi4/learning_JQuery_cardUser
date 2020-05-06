@@ -2,8 +2,8 @@
 $('.to-do-form').on('submit', function (event) {
     event.preventDefault();
     let number = $('.number').val();
-    if (number < 1 || number > 6){
-        alert('Такого сотрудника не существует. Пожалуста, введите значение от 1 до 6!')
+    if (number < 1 || number > 12){
+        alert('Такого сотрудника не существует. Пожалуста, введите значение от 1 до 12!')
     }else {
         getData(number);
     }
@@ -12,9 +12,9 @@ $('.to-do-form').on('submit', function (event) {
 
 function getData(number) {
     $.ajax({
-        url: 'https://reqres.in/api/users?page=1',
+        url: "https://reqres.in/api/users/" + `${number}`,
         success: function (data) {
-            addUser(data.data[`${number-1}`]);
+            addUser(data.data);
         }
     })
 }
@@ -72,7 +72,7 @@ function saveChange() {
     let curText = cur.val();
     let textElem = $('<div>');
     textElem.text(curText).css('color','red');
-    let parent = cur.closest('div');
+    let parent = cur.parent('div');
     parent.prepend(textElem);
     cur.remove();
 }
@@ -82,10 +82,8 @@ function changeVal(){
     let curText = cur.text();
     let input = $('<input>');
     input.val(curText);
-    let parent = cur.closest('div');
+    let parent = cur.parent('div');
     parent.prepend(input);
     cur.remove();
     input.on('blur', saveChange);
 }
-
-
